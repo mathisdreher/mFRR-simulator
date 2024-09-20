@@ -34,13 +34,17 @@ st.markdown(f"### With :red[{capacity_MW} MW] of flex capacity, you could earn :
 # Pie Chart for MFRR Revenue Mix
 labels = ['Availability Revenue', 'Activation Revenue']
 sizes = [annual_availability_revenue, annual_activation_revenue]
-colors = ['#1f77b4', '#ff7f0e']
+colors = ['#1f77b4', '##b41f1f']
 explode = (0.1, 0)  # explode the 1st slice (Availability Revenue)
+
+# Format the labels to show both the name and the value
+formatted_labels = [f'{label}: €{size:,.1f}' for label, size in zip(labels, sizes)]
 
 # Plotting the pie chart
 fig1, ax1 = plt.subplots()
-ax1.pie(sizes, explode=explode, labels=labels, colors=colors, autopct='%1.1f%%',
+ax1.pie(sizes, explode=explode, labels=formatted_labels, colors=colors, autopct='%1.1f%%',
         shadow=False, startangle=90)
+
 ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
 st.pyplot(fig1)
 
