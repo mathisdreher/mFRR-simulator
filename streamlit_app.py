@@ -29,7 +29,7 @@ total_revenue = annual_availability_revenue + annual_activation_revenue
 activation_hours_per_year = total_hours_per_year * (activation_rate / 1000)
 
 # Dynamic Display for MFRR
-st.markdown(f"### With **{capacity_MW} MW** of flex capacity, you could earn **€{total_revenue:,.2f}** based on an assumption of **{activation_hours_per_year:.1f} activation hours** per year with Flexcity.")
+st.markdown(f"### With :red[{capacity_MW} MW] of flex capacity, you could earn :red[**€{total_revenue:,.2f}**] based on an assumption of :red[**{activation_hours_per_year:.1f}] activation days per year with Flexcity.")
 
 # Pie Chart for MFRR Revenue Mix
 labels = ['Availability Revenue', 'Activation Revenue']
@@ -40,13 +40,24 @@ explode = (0.1, 0)  # explode the 1st slice (Availability Revenue)
 # Plotting the pie chart
 fig1, ax1 = plt.subplots()
 ax1.pie(sizes, explode=explode, labels=labels, colors=colors, autopct='%1.1f%%',
-        shadow=True, startangle=90)
+        shadow=False, startangle=90)
 ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
 st.pyplot(fig1)
 
 # CTA
-st.markdown("""
-**Next Steps:**
-- Customize the assumptions to reflect your specific expectations.
-- Contact Flexcity for a personalized consultation and to learn how we can help you optimize your battery's performance.
-""")
+    st.markdown("""
+    ### Understanding the Business Case
+
+    Participating in the mFRR market can provide significant revenue streams.
+    By partnering with Flexcity, you can maximize your asset potential through expert market access and optimized operations.
+
+    - **Capacity Revenue:** Earnings from being available to provide mFRR services.
+    - **Activation Revenue:** Earnings from actual energy delivery during activations.
+
+
+    ### Next Steps
+
+    - **Customize Assumptions:** Adjust the parameters to reflect your expectations.
+    - **Contact Flexcity:** [Get in touch](https://www.flexcity.energy/contact) for a personalized consultation.
+
+    """)
