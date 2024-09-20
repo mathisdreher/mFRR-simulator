@@ -29,7 +29,7 @@ total_revenue = annual_availability_revenue + annual_activation_revenue
 
 
 # Dynamic Display for MFRR with
-st.markdown(f"### With :red[{capacity_MW} MW] of flex capacity, you could earn :red[€{total_revenue:,.0f}] based on an assumption of :red[{activation} activation days] per year with Flexcity.")
+st.markdown(f"### With :red[{capacity_MW} MW] of flex capacity, you could earn :red[€{total_revenue:,.0f}] based on an assumption of :red[{activations} activation days] per year with Flexcity.")
 
 # Pie Chart for MFRR Revenue Mix
 labels = ['Availability Revenue', 'Activation Revenue']
