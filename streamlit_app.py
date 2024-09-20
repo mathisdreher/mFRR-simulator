@@ -11,7 +11,7 @@ st.image(logo, width=300)
 st.title('MFRR Revenue Simulator for Flexcity')
 
 # User Inputs
-volume_MWh = st.number_input('Enter the volume in MW/h:', min_value=0.1,step=0.1)
+volume_MWh = st.number_input('Enter the volume in MW/h:', min_value=1.0,step=0.1)
 selection_rate = st.slider('Selection Rate (%)', 80, 90, 85)
 price_per_MWh = st.slider('Price per MW/h (€)', 6, 12, 9)
 activation_payment = st.slider('Activation Payment (€/MWh)', 1200, 1800, 1500)
