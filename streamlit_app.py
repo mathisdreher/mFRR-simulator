@@ -20,7 +20,7 @@ capacity_MW = st.number_input('Enter the capacity in MW:', min_value=1.0, step=0
 selection_rate = st.slider('Selection Rate (%)', 80, 90, 85)
 price_per_MW_per_hour = st.slider('Availability Payment Rate (€/MW/h)', 6, 12, 9)
 activation_payment_per_MWh = st.slider('Activation Payment (€/MWh)', 1200, 1800, 1500)
-activations = st.slider('Activations days', 1, 6, 3)
+activations = st.slider('Activations days', 1.0, 6.0, 2.5)
 
 # Calculations for MFRR
 annual_availability_revenue = capacity_MW * price_per_MW_per_hour * total_hours_per_year * (selection_rate / 100)
