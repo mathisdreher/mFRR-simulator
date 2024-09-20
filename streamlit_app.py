@@ -45,7 +45,7 @@ ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
 st.pyplot(fig1)
 
 # CTA
-    st.markdown("""
+st.markdown("""
     ### Understanding the Business Case
 
     Participating in the mFRR market can provide significant revenue streams.
@@ -60,4 +60,4 @@ st.pyplot(fig1)
     - **Customize Assumptions:** Adjust the parameters to reflect your expectations.
     - **Contact Flexcity:** [Get in touch](https://www.flexcity.energy/contact) for a personalized consultation.
 
-    """)
+""")
