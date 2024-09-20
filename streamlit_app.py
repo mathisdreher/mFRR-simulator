@@ -29,12 +29,12 @@ total_revenue = annual_availability_revenue + annual_activation_revenue
 activation_hours_per_year = total_hours_per_year * (activation_rate / 1000)
 
 # Dynamic Display for MFRR
-st.markdown(f"### With red:[**{capacity_MW} MW**] of flex capacity, you could earn red:[**€{total_revenue:,.2f}** based on an assumption of red:[**{activation_hours_per_year:.1f} activation hours**] per year with Flexcity.")
+st.markdown(f"### With :red[{capacity_MW} MW] of flex capacity, you could earn :red[€{total_revenue:,.2f} based on an assumption of :red[{activation_hours_per_year:.1f} activation hours] per year with Flexcity.")
 
 # Pie Chart for MFRR Revenue Mix
 labels = ['Availability Revenue', 'Activation Revenue']
 sizes = [annual_availability_revenue, annual_activation_revenue]
-colors = ['#1f77b4', '#ff7f0e']
+colors = ['#1f77b4', '##b41f1f']
 explode = (0.1, 0)  # explode the 1st slice (Availability Revenue)
 
 # Plotting the pie chart
@@ -44,18 +44,7 @@ ax1.pie(sizes, explode=explode, labels=labels, colors=colors, autopct='%1.1f%%',
 ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
 st.pyplot(fig1)
 
-# Pie Chart for MFRR Revenue Mix
-labels = ['Availability Revenue', 'Activation Revenue']
-sizes = [annual_availability_revenue, annual_activation_revenue]
-colors = ['#1f77b4', '#ff7f0e']
-explode = (0.1, 0)  # explode the 1st slice (Availability Revenue)
 
-# Plotting the pie chart
-fig1, ax1 = plt.subplots()
-ax1.pie(sizes, explode=explode, labels=labels, colors=colors, autopct='%1.1f%%',
-        shadow=True, startangle=90)
-ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
-st.pyplot(fig1)
 # CTA
 
 st.markdown("""
