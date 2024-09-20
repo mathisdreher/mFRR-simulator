@@ -12,8 +12,6 @@ st.title('MFRR Revenue Simulator for Flexcity')
 
 # Constants
 total_hours_per_year = 8760
-total_days_per_year = 365
-hours_per_activation = 4
 
 # User Inputs
 capacity_MW = st.number_input('Enter the capacity in MW:', min_value=1.0, step=0.1)
