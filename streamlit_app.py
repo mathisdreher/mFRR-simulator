@@ -44,7 +44,20 @@ ax1.pie(sizes, explode=explode, labels=labels, colors=colors, autopct='%1.1f%%',
 ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
 st.pyplot(fig1)
 
+# Pie Chart for MFRR Revenue Mix
+labels = ['Availability Revenue', 'Activation Revenue']
+sizes = [annual_availability_revenue, annual_activation_revenue]
+colors = ['#1f77b4', '#ff7f0e']
+explode = (0.1, 0)  # explode the 1st slice (Availability Revenue)
+
+# Plotting the pie chart
+fig1, ax1 = plt.subplots()
+ax1.pie(sizes, explode=explode, labels=labels, colors=colors, autopct='%1.1f%%',
+        shadow=True, startangle=90)
+ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+st.pyplot(fig1)
 # CTA
+
 st.markdown("""
     ### Understanding the Business Case
 
