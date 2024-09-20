@@ -10,16 +10,21 @@ st.image(logo, width=300)
 # Title
 st.title('MFRR Revenue Simulator for Flexcity')
 
+# Constants
+total_hours_per_year = 8760
+total_days_per_year = 365
+hours_per_activation = 4
+
 # User Inputs
 capacity_MW = st.number_input('Enter the capacity in MW:', min_value=1.0, step=0.1)
 selection_rate = st.slider('Selection Rate (%)', 80, 90, 85)
 price_per_MW_per_hour = st.slider('Availability Payment Rate (€/MW/h)', 6, 12, 9)
 activation_payment_per_MWh = st.slider('Activation Payment (€/MWh)', 1200, 1800, 1500)
-activation_rate = st.slider('Activations days', 1, 6, 3)
+activations = st.slider('Activations days', 1, 6, 3)
 
 # Calculations for MFRR
 annual_availability_revenue = capacity_MW * price_per_MW_per_hour * total_hours_per_year * (selection_rate / 100)
-annual_activation_revenue = capacity_MW * activation_payment_per_MWh * 4 * activation_rate
+annual_activation_revenue = capacity_MW * activation_payment_per_MWh * hours_per_activation * activations
 total_revenue = annual_availability_revenue + annual_activation_revenue
 
 # Number of activation hours per year
