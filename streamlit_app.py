@@ -18,7 +18,7 @@ activation_payment_per_MWh = st.slider('Activation Payment (€/MWh)', 1200, 180
 activation_rate = st.slider('Activation Rate (‰)', 0.2, 0.3, 0.25)
 
 # Constants
-total_hours_per_year = 8760
+days_per_year = 365.25
 
 # Calculations for MFRR
 annual_availability_revenue = capacity_MW * price_per_MW_per_hour * total_hours_per_year * (selection_rate / 100)
@@ -26,10 +26,10 @@ annual_activation_revenue = capacity_MW * activation_payment_per_MWh * total_hou
 total_revenue = annual_availability_revenue + annual_activation_revenue
 
 # Number of activation hours per year
-activation_hours_per_year = total_hours_per_year * (activation_rate / 1000)
+activation_days_per_year = days_per_year * (activation_rate / 1000)
 
 # Dynamic Display for MFRR with
-st.markdown(f"### With :red[**{capacity_MW} MW]** of flex capacity, you could earn **:red[€{total_revenue:,.0f}]** based on an assumption of :red[**{activation_hours_per_year:.1f} activation hours]** per year with Flexcity.")
+st.markdown(f"### With :red[{capacity_MW} MW] of flex capacity, you could earn :red[€{total_revenue:,.0f}] based on an assumption of :red[{activation_days_per_year:.1f} activation days] per year with Flexcity.")
 
 # Pie Chart for MFRR Revenue Mix
 labels = ['Availability Revenue', 'Activation Revenue']
