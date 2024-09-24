@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 def main():
-        st.set_page_config(page_title="Battery Revenue Simulator", layout="wide")
+        st.set_page_config(page_title="mFRR Revenue Simulator", layout="wide")
         
         # Display Logo
         logo = 'https://www.flexcity.energy/sites/g/files/dvc3216/files/Logo-Flexcity-by-Veolia---480x128.jpg'
