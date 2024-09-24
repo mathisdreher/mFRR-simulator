@@ -3,6 +3,9 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
+def main():
+st.set_page_config(page_title="Battery Revenue Simulator", layout="wide")
+
 # Display Logo
 logo = 'https://www.flexcity.energy/sites/g/files/dvc3216/files/Logo-Flexcity-by-Veolia---480x128.jpg'
 st.image(logo, width=300)
@@ -52,3 +55,6 @@ st.markdown("""
 - Customize the assumptions to reflect your specific expectations.
 - Contact Flexcity for a personalized consultation and to learn how we can help you optimize your battery's performance.
 """)
+
+if __name__ == "__main__":
+    main()
